@@ -1,8 +1,9 @@
 // @flow
+const isArray = require("./isArray")
 
-type Input = Array<mixed> | Object
+type Target = Array<mixed> | Object
 
-module.exports = function(target: Input): Input {
+module.exports = function(target: Target): Target {
   var copy
 
   if (isArray(target)) {
@@ -25,14 +26,7 @@ module.exports = function(target: Input): Input {
   return copy
 }
 
-var toString = Object.prototype.toString
 var hasOwnProperty = Object.prototype.hasOwnProperty
-
-var isArray =
-  Array.isArray ||
-  function(xs) {
-    return toString.call(xs) === "[object Array]"
-  }
 
 var objectKeys =
   Object.keys ||

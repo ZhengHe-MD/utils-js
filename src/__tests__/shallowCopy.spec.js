@@ -1,27 +1,27 @@
-import test from "ava";
-import shallowCopy from "../shallowCopy";
+import test from "ava"
+import shallowCopy from "../shallowCopy"
 
 test("shallowCopy should be able to copy plain object", t => {
-  t.plan(4);
-  const oldObj = {
+  t.plan(4)
+  const target = {
     prop: "prop",
     arr: [1, 2, 3],
     func: function() {}
-  };
-  const newObj = shallowCopy(oldObj);
-  t.not(oldObj, newObj);
-  t.is(oldObj.arr, newObj.arr);
-  t.is(oldObj.func, newObj.func);
-  t.is(oldObj.prop, newObj.prop);
-});
+  }
+  const copy = shallowCopy(target)
+  t.not(target, copy)
+  t.is(target.arr, copy.arr)
+  t.is(target.func, copy.func)
+  t.is(target.prop, copy.prop)
+})
 
 test("shallowCopy should be able to copy array", t => {
-  t.plan(5);
-  const oldArray = [0, [1, 2], { a: 1 }, function() {}];
-  const newArray = shallowCopy(oldArray);
-  t.not(oldArray, newArray);
-  t.is(oldArray[0], newArray[0]);
-  t.is(oldArray[1], newArray[1]);
-  t.is(oldArray[2], newArray[2]);
-  t.is(oldArray[3], newArray[3]);
-});
+  t.plan(5)
+  const target = [0, [1, 2], { a: 1 }, function() {}]
+  const copy = shallowCopy(target)
+  t.not(target, copy)
+  t.is(target[0], copy[0])
+  t.is(target[1], copy[1])
+  t.is(target[2], copy[2])
+  t.is(target[3], copy[3])
+})
