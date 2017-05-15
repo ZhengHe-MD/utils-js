@@ -1,6 +1,6 @@
 {
   "*.js": [
-    "prettier --write",
+    "prettier --write --no-semi",
     "git add"
   ]
 }
