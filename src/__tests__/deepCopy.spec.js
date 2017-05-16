@@ -1,7 +1,7 @@
 import test from "ava"
 import { jsonDeepCopy } from "../deepCopy"
 
-test("jsonDeepCopy should be able to copy normal json object deep", t => {
+test("should be able to copy normal json object deep", t => {
   t.plan(6)
   const target = {
     arr: [1, 2, 3],
@@ -20,7 +20,7 @@ test("jsonDeepCopy should be able to copy normal json object deep", t => {
   t.is(target.obj.num, copy.obj.num)
 })
 
-test("jsonDeepCopy should be able to copy normal json array deep", t => {
+test("should be able to copy normal json array deep", t => {
   t.plan(4)
   const target = [1, "hello", { a: 1 }]
 

@@ -1,13 +1,13 @@
 import test from "ava"
 import isArray from "../isArray"
 
-test("isArray should return true given an valid array", t => {
+test("should return true given an valid array", t => {
   t.plan(1)
   const arr = [1, 2, 3]
   t.true(isArray(arr))
 })
 
-test("isArray should return false given data other than array", t => {
+test("should return false given data other than array", t => {
   t.plan(7)
   const obj = {}
   const str = "123"

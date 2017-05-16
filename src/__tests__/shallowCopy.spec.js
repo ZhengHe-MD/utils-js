@@ -1,7 +1,7 @@
 import test from "ava"
 import shallowCopy from "../shallowCopy"
 
-test("shallowCopy should be able to copy plain object", t => {
+test("should be able to copy plain object", t => {
   t.plan(4)
   const target = {
     prop: "prop",
@@ -15,7 +15,7 @@ test("shallowCopy should be able to copy plain object", t => {
   t.is(target.prop, copy.prop)
 })
 
-test("shallowCopy should be able to copy array", t => {
+test("should be able to copy array", t => {
   t.plan(5)
   const target = [0, [1, 2], { a: 1 }, function() {}]
   const copy = shallowCopy(target)

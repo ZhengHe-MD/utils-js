@@ -1,13 +1,13 @@
 import test from "ava"
 import isObject from "../isObject"
 
-test("isObject should return true given valid object", t => {
+test("should return true given valid object", t => {
   t.plan(1)
   const target = { a: 1 }
   t.true(isObject(target))
 })
 
-test("isObject should return false given data other than plain object", t => {
+test("should return false given data other than plain object", t => {
   t.plan(7)
 
   const num = 1
