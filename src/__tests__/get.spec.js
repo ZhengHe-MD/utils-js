@@ -46,6 +46,19 @@ test("should return undefined when given path is not valid", t => {
   t.is(get(target, invalidPath), undefined)
 })
 
+test("should return target when given path is empty", t => {
+  t.plan(1)
+  const target = {
+    a: {
+      b: {
+        c: 1
+      }
+    }
+  }
+  const emptyPath = []
+  t.is(get(target, emptyPath), target)
+})
+
 test("should return default value when given path is not valid", t => {
   t.plan(1)
   const target = {
